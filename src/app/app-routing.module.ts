@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'emoji', loadChildren: () => import('./pages/emoji/emoji.module').then(m => m.EmojiModule)},
   {path: 'audit', loadChildren: () => import('./pages/audit/audit.module').then(m => m.AuditModule)},
   {path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)},
+  {path: '**', loadChildren: () => import('./pages/notfound/notfound.module').then(m => m.NotfoundModule)},
 ];
 
 @NgModule({
