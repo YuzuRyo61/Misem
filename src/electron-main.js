@@ -15,6 +15,7 @@ function createWindow() {
     }
   })
 
+  win.setMenu(null)
 
   win.loadURL(url.format({
     pathname: path.join(__dirname, '..', 'dist/misem/index.html'),
@@ -22,7 +23,9 @@ function createWindow() {
     slashes: true
   }))
 
-  // win.webContents.openDevTools()
+  if (process.env.NODE_ENV === 'development') {
+    win.webContents.openDevTools()
+  }
 
   win.on('closed', function () {
     win = null
