@@ -1,7 +1,7 @@
 {
   "name": "misem",
   "version": "0.0.0",
-  "main": "src/electron-main.js",
+  "main": "electron/electron-main.js",
   "description": "Misskey Server Management Application",
   "license": "MIT",
   "author": {
@@ -11,9 +11,11 @@
     "ng": "ng",
     "start": "ng serve --open",
     "start:electron": "ng build && electron .",
-    "build:web": "ng build",
-    "build:web:prod": "ng build --prod",
-    "build:electron": "ng build --prod && electron-packager . Misem --overwrite --platform=linux,win32 --arch=x64 --out build/ --asar",
+    "build": "ng build",
+    "build:prod": "ng build --prod",
+    "electron:build": "yarn build && yarn electron:package",
+    "electron:build:prod": "yarn build:prod && yarn electron:package",
+    "electron:package": "electron-packager . Misem --overwrite --platform=linux,win32 --arch=x64 --out build/ --ignore=node_modules --asar",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
