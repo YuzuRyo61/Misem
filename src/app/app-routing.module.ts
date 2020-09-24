@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {ExtraOptions, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -16,8 +16,14 @@ const routes: Routes = [
   {path: '**', loadChildren: () => import('./pages/notfound/notfound.module').then(m => m.NotfoundModule)},
 ];
 
+const configuration: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 72]
+}
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, configuration)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
