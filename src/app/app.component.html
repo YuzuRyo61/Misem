@@ -1,23 +1,43 @@
 <mat-drawer-container class="main-container">
   <mat-drawer #drawer class="sidenav" mode="side">
     <mat-nav-list>
-      <a mat-list-item routerLink="/dashboard"><mat-icon mat-list-icon>home</mat-icon> ダッシュボード</a>
-      <a mat-list-item routerLink="/instance"><mat-icon mat-list-icon>settings</mat-icon> インスタンス設定</a>
-      <a mat-list-item><mat-icon mat-list-icon>storage</mat-icon> ドライブ</a>
-      <a mat-list-item><mat-icon mat-list-icon>settings_ethernet</mat-icon> ジョブキュー</a>
-      <a mat-list-item><mat-icon mat-list-icon>public</mat-icon> 連合</a>
-      <a mat-list-item><mat-icon mat-list-icon>dns</mat-icon> リレー</a>
-      <a mat-list-item><mat-icon mat-list-icon>campaign</mat-icon> お知らせ</a>
-      <a mat-list-item><mat-icon mat-list-icon>mood</mat-icon> カスタム絵文字</a>
-      <a mat-list-item><mat-icon mat-list-icon>gavel</mat-icon> 監査ログ</a>
-      <hr mat-list-icon />
-      <a mat-list-item><mat-icon mat-list-icon>info</mat-icon> About</a>
+      <a mat-list-item routerLink="/dashboard">
+        <mat-icon mat-list-icon>home</mat-icon>
+        ダッシュボード</a>
+      <a mat-list-item routerLink="/instance">
+        <mat-icon mat-list-icon>settings</mat-icon>
+        インスタンス設定</a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>storage</mat-icon>
+        ドライブ</a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>settings_ethernet</mat-icon>
+        ジョブキュー</a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>public</mat-icon>
+        連合</a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>dns</mat-icon>
+        リレー</a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>campaign</mat-icon>
+        お知らせ</a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>mood</mat-icon>
+        カスタム絵文字</a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>gavel</mat-icon>
+        監査ログ</a>
+      <hr mat-list-icon/>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>info</mat-icon>
+        About</a>
     </mat-nav-list>
   </mat-drawer>
 
   <div class="content">
     <mat-toolbar color="primary">
-      <button mat-icon-button aria-label="Open main menu" (click)="drawer.toggle()">
+      <button (click)="drawer.toggle()" aria-label="Open main menu" mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
       <span>Misem</span>
