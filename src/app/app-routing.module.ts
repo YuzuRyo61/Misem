@@ -5,6 +5,14 @@ const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)},
   {path: 'instance', loadChildren: () => import('./pages/instance/instance.module').then(m => m.InstanceModule)},
+  {path: 'drive', loadChildren: () => import('./pages/drive/drive.module').then(m => m.DriveModule)},
+  {path: 'queue', loadChildren: () => import('./pages/queue/queue.module').then(m => m.QueueModule)},
+  {path: 'fediverse', loadChildren: () => import('./pages/fediverse/fediverse.module').then(m => m.FediverseModule)},
+  {path: 'relay', loadChildren: () => import('./pages/relay/relay.module').then(m => m.RelayModule)},
+  {path: 'announcement', loadChildren: () => import('./pages/announcement/announcement.module').then(m => m.AnnouncementModule)},
+  {path: 'emoji', loadChildren: () => import('./pages/emoji/emoji.module').then(m => m.EmojiModule)},
+  {path: 'audit', loadChildren: () => import('./pages/audit/audit.module').then(m => m.AuditModule)},
+  {path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)},
 ];
 
 @NgModule({
