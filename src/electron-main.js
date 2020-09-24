@@ -1,10 +1,10 @@
-const { app, BrowserWindow } = require('electron')
+const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
 let win;
 
-function createWindow () {
+function createWindow() {
   win = new BrowserWindow({
     width: 900,
     height: 600,

@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {DashboardComponent} from "./pages/dashboard/dashboard.component";
-import {InstanceComponent} from "./pages/instance/instance.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'instance', component: InstanceComponent },
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)},
+  {path: 'instance', loadChildren: () => import('./pages/instance/instance.module').then(m => m.InstanceModule)},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
