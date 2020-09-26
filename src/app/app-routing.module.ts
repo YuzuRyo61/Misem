@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'announcement', loadChildren: () => import('./pages/announcement/announcement.module').then(m => m.AnnouncementModule)},
   {path: 'emoji', loadChildren: () => import('./pages/emoji/emoji.module').then(m => m.EmojiModule)},
   {path: 'audit', loadChildren: () => import('./pages/audit/audit.module').then(m => m.AuditModule)},
+  {path: 'miauth', loadChildren: () => import('./pages/miauth/miauth.module').then(m => m.MiauthModule)},
   {path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)},
   {path: '**', loadChildren: () => import('./pages/notfound/notfound.module').then(m => m.NotfoundModule)},
 ];
