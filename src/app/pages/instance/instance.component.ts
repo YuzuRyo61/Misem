@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, Validators} from "@angular/forms";
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-instance',
@@ -12,26 +12,26 @@ export class InstanceComponent implements OnInit {
     [
       Validators.pattern('https?://([\\w-]+\\.)+[\\w-]+(/[\\w- .?%&=]*)?')
     ]
-  )
+  );
   bannerUrl = new FormControl(
     '',
     [
       Validators.pattern('https?://([\\w-]+\\.)+[\\w-]+(/[\\w- .?%&=]*)?')
     ]
-  )
+  );
   termUrl = new FormControl(
     '',
     [
       Validators.pattern('https?://([\\w-]+\\.)+[\\w-]+(/[\\w- .?%&=]*)?')
     ]
-  )
+  );
   noteLengthForm = new FormControl(
     '',
     [
       Validators.min(1),
       Validators.required
     ]
-  )
+  );
   adminEmail = new FormControl(
     '',
     [

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {RelayComponent} from "./relay.component";
+import {RelayComponent} from './relay.component';
 
 const routes: Routes = [
   {

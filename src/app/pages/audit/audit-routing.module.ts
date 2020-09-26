@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AuditComponent} from "./audit.component";
+import {AuditComponent} from './audit.component';
 
 const routes: Routes = [
   {

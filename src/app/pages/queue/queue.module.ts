@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { QueueRoutingModule } from './queue-routing.module';
-import {QueueComponent} from "./queue.component";
+import {QueueComponent} from './queue.component';
 
 
 @NgModule({

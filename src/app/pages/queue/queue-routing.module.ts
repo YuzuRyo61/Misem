@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {QueueComponent} from "./queue.component";
+import {QueueComponent} from './queue.component';
 
 const routes: Routes = [
   {

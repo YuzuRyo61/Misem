@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {EmojiComponent} from "./emoji.component";
+import {EmojiComponent} from './emoji.component';
 
 const routes: Routes = [
   {
