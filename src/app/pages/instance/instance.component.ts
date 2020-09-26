@@ -46,7 +46,7 @@ export class InstanceComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getNoteLengthError() {
+  getNoteLengthError(): string {
     if (this.noteLengthForm.hasError('required')) {
       return '値を入力してください。';
     }
