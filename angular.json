@@ -123,5 +123,9 @@
       }
     }
   },
-  "defaultProject": "misem"
+  "defaultProject": "misem",
+  "cli": {
+    "analytics": false,
+    "packageManager": "yarn"
+  }
 }
