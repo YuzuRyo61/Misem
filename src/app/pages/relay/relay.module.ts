@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { RelayRoutingModule } from './relay-routing.module';
-import {RelayComponent} from "./relay.component";
+import {RelayRoutingModule} from './relay-routing.module';
+import {RelayComponent} from './relay.component';
 
 
 @NgModule({
@@ -12,4 +12,5 @@ import {RelayComponent} from "./relay.component";
     RelayRoutingModule
   ]
 })
-export class RelayModule { }
+export class RelayModule {
+}

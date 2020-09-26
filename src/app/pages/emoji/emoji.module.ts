@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { EmojiRoutingModule } from './emoji-routing.module';
-import {EmojiComponent} from "./emoji.component";
+import {EmojiRoutingModule} from './emoji-routing.module';
+import {EmojiComponent} from './emoji.component';
 
 
 @NgModule({
@@ -12,4 +12,5 @@ import {EmojiComponent} from "./emoji.component";
     EmojiRoutingModule
   ]
 })
-export class EmojiModule { }
+export class EmojiModule {
+}

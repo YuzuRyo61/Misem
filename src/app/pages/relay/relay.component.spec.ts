@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
-import { RelayComponent } from './relay.component';
+import {RelayComponent} from './relay.component';
 
 describe('RelayComponent', () => {
   let component: RelayComponent;
   let fixture: ComponentFixture<RelayComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RelayComponent ]
+      declarations: [RelayComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

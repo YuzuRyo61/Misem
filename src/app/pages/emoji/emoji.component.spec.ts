@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
-import { EmojiComponent } from './emoji.component';
+import {EmojiComponent} from './emoji.component';
 
 describe('EmojiComponent', () => {
   let component: EmojiComponent;
   let fixture: ComponentFixture<EmojiComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmojiComponent ]
+      declarations: [EmojiComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

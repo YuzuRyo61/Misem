@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {AboutRoutingModule} from './about-routing.module';
-import {AboutComponent} from "./about.component";
+import {AboutComponent} from './about.component';
 
 
 @NgModule({
@@ -12,4 +12,5 @@ import {AboutComponent} from "./about.component";
     AboutRoutingModule
   ]
 })
-export class AboutModule { }
+export class AboutModule {
+}

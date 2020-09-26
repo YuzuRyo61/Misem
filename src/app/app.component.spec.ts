@@ -1,12 +1,28 @@
-import {async, TestBed} from '@angular/core/testing';
+import {TestBed, waitForAsync} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {AppComponent} from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatListModule,
       ],
       declarations: [
         AppComponent

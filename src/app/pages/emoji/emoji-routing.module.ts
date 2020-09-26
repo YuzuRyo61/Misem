@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {EmojiComponent} from "./emoji.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {EmojiComponent} from './emoji.component';
 
 const routes: Routes = [
   {
@@ -13,4 +13,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class EmojiRoutingModule { }
+export class EmojiRoutingModule {
+}

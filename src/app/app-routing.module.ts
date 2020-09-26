@@ -20,7 +20,7 @@ const configuration: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
   scrollOffset: [0, 72]
-}
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, configuration)],

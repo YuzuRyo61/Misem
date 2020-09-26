@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { FediverseRoutingModule } from './fediverse-routing.module';
-import {FediverseComponent} from "./fediverse.component";
+import {FediverseRoutingModule} from './fediverse-routing.module';
+import {FediverseComponent} from './fediverse.component';
 
 
 @NgModule({
@@ -12,4 +12,5 @@ import {FediverseComponent} from "./fediverse.component";
     FediverseRoutingModule
   ]
 })
-export class FediverseModule { }
+export class FediverseModule {
+}
