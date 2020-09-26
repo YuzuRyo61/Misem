@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { QueueRoutingModule } from './queue-routing.module';
+import {QueueRoutingModule} from './queue-routing.module';
 import {QueueComponent} from './queue.component';
 
 
@@ -12,4 +12,5 @@ import {QueueComponent} from './queue.component';
     QueueRoutingModule
   ]
 })
-export class QueueModule { }
+export class QueueModule {
+}

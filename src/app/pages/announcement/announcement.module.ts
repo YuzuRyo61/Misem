@@ -12,4 +12,5 @@ import {AnnouncementComponent} from './announcement.component';
     AnnouncementRoutingModule
   ]
 })
-export class AnnouncementModule { }
+export class AnnouncementModule {
+}

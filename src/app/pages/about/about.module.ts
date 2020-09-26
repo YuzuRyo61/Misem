@@ -12,4 +12,5 @@ import {AboutComponent} from './about.component';
     AboutRoutingModule
   ]
 })
-export class AboutModule { }
+export class AboutModule {
+}

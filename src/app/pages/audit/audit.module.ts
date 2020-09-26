@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AuditRoutingModule } from './audit-routing.module';
+import {AuditRoutingModule} from './audit-routing.module';
 import {AuditComponent} from './audit.component';
 
 
@@ -12,4 +12,5 @@ import {AuditComponent} from './audit.component';
     AuditRoutingModule
   ]
 })
-export class AuditModule { }
+export class AuditModule {
+}

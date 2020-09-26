@@ -1,14 +1,13 @@
-
 <!--suppress ALL -->
-<div fxFlexFill fxLayoutAlign="start stretch" fxLayout="row">
-  <div fxFlex="20%" class="side-menu" fxFlexFill fxShow fxHide.lt-md="true">
+<div fxFlexFill fxLayout="row" fxLayoutAlign="start stretch">
+  <div class="side-menu" fxFlex="20%" fxFlexFill fxHide.lt-md="true" fxShow>
     <h1>インスタンス設定</h1>
     <p><i>※セクション移動はまだ機能しません</i></p>
     <ul>
-      <li><a routerLink="/instance" fragment="basic">基本情報</a></li>
-      <li><a routerLink="/instance" fragment="note-timeline">ノート・タイムライン</a></li>
+      <li><a fragment="basic" routerLink="/instance">基本情報</a></li>
+      <li><a fragment="note-timeline" routerLink="/instance">ノート・タイムライン</a></li>
     </ul>
-    <button mat-raised-button color="primary" style="width: 100%;">保存</button>
+    <button color="primary" mat-raised-button style="width: 100%;">保存</button>
   </div>
   <div fxFlex>
     <section id="basic">
@@ -26,19 +25,19 @@
 
       <mat-form-field appearance="outline">
         <mat-label>アイコン画像のURL</mat-label>
-        <input matInput type="url" [formControl]="iconUrl">
+        <input [formControl]="iconUrl" matInput type="url">
         <mat-error *ngIf="iconUrl.invalid">URLの形式が正しくありません。</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>バナー画像のURL</mat-label>
-        <input matInput type="url" [formControl]="bannerUrl">
+        <input [formControl]="bannerUrl" matInput type="url">
         <mat-error *ngIf="bannerUrl.invalid">URLの形式が正しくありません。</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>利用規約のURL</mat-label>
-        <input matInput type="url" [formControl]="termUrl">
+        <input [formControl]="termUrl" matInput type="url">
         <mat-error *ngIf="termUrl.invalid">URLの形式が正しくありません。</mat-error>
       </mat-form-field>
 
@@ -49,7 +48,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>管理者メールアドレス</mat-label>
-        <input matInput type="email" [formControl]="adminEmail">
+        <input [formControl]="adminEmail" matInput type="email">
         <mat-error *ngIf="adminEmail.invalid">Eメールの形式が正しくありません。</mat-error>
       </mat-form-field>
     </section>
@@ -60,7 +59,7 @@
       <h2>ノート・タイムライン</h2>
       <mat-form-field appearance="outline">
         <mat-label>ノートの最大文字数</mat-label>
-        <input matInput type="number" [formControl]="noteLengthForm">
+        <input [formControl]="noteLengthForm" matInput type="number">
         <mat-error *ngIf="noteLengthForm">{{getNoteLengthError()}}</mat-error>
       </mat-form-field>
 
@@ -71,7 +70,8 @@
         <mat-checkbox>グローバルタイムラインを有効にする</mat-checkbox>
       </section>
       <mat-card>
-        <mat-icon aria-hidden="false">info</mat-icon> 管理者やモデレーターの場合は、タイムライン無効設定に関係なく表示することができます。
+        <mat-icon aria-hidden="false">info</mat-icon>
+        管理者やモデレーターの場合は、タイムライン無効設定に関係なく表示することができます。
       </mat-card>
       <section class="checkbox-section" style="margin-top: 10px;">
         <mat-checkbox>リアクション絵文字が不明な場合（Mastodonからのお気に入りなど）は、★のリアクションにする</mat-checkbox>
@@ -85,7 +85,7 @@
       <section class="checkbox-section">
         <mat-checkbox [(ngModel)]="openRegister">登録オープン（チェックを外すと招待制になります）</mat-checkbox>
       </section>
-      <button mat-raised-button color="primary" [disabled]="openRegister" style="width: 100%">
+      <button [disabled]="openRegister" color="primary" mat-raised-button style="width: 100%">
         招待コードを作成する
       </button>
     </section>
