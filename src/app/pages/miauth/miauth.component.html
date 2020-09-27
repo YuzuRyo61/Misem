@@ -1,1 +1,26 @@
-<p>miauth works!</p>
+<h1>アカウント</h1>
+<div>
+  <!-- ログインしているときの表示 -->
+  <p>現在ログインしているアカウントは以下の通りです。</p>
+
+  <mat-card>
+    <mat-card-header>
+      <!-- TODO: アカウント画像はまだサンプル。Angularのサービスを介してbackground-imageに代入する予定 -->
+      <div
+        mat-card-avatar
+        style="background-size: cover; background-image: url('https://s3.arkjp.net/misskey/thumbnail-0c27be10-e096-443e-93b1-094ef159ff5c.png')"></div>
+      <mat-card-title>アカウント名</mat-card-title>
+      <mat-card-subtitle>@username@example.com</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <!-- TODO: モデレーターであれば表示する -->
+        現在ログインしているアカウントはモデレーター権限のため、一部設定項目が変更できません。
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <p>管理するサーバーを変更する場合はログアウトして再度ログインしてください。</p>
+
+  <button mat-raised-button color="warn" style="width: 100%" (click)="logoutConfirm()">ログアウト</button>
+</div>
