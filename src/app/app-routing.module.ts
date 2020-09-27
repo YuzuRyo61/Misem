@@ -5,6 +5,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)},
   {path: 'instance', loadChildren: () => import('./pages/instance/instance.module').then(m => m.InstanceModule)},
+  {path: 'user', loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule)},
   {path: 'drive', loadChildren: () => import('./pages/drive/drive.module').then(m => m.DriveModule)},
   {path: 'queue', loadChildren: () => import('./pages/queue/queue.module').then(m => m.QueueModule)},
   {path: 'fediverse', loadChildren: () => import('./pages/fediverse/fediverse.module').then(m => m.FediverseModule)},
