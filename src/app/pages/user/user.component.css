@@ -1,0 +1,19 @@
+.search-panel {
+  margin-bottom: 20px;
+}
+
+.divider {
+  margin-bottom: 20px;
+}
+
+.users-list {
+  width: 100%;
+  height: 500px;
+}
+
+.users-list::-webkit-scrollbar {
+  display:none;
+}
+.user-card {
+  margin-bottom: 16px;
+}

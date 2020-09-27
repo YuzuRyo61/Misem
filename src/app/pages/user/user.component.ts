@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  users = Array.from({length: 100}).map((_, i) => {
+    return     {
+      id: `id${i}`,
+      username: 'example',
+      host: 'example.com',
+      displayName: 'Example User',
+      accountImage: 'https://...'
+    }
+  })
 
   constructor() { }
 
