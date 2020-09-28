@@ -17,9 +17,9 @@
 
 <mat-divider class="divider"></mat-divider>
 
-<cdk-virtual-scroll-viewport class="users-list" itemSize="200">
-<!--  <div fxLayout="row wrap" fxLayoutAlign="space-evenly" fxLayoutGap="16px grid" class="user-cards">-->
-    <div *cdkVirtualFor="let user of users" class="user-card">
+<!--<cdk-virtual-scroll-viewport class="users-list" itemSize="200">-->
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly" fxLayoutGap="16px grid" class="user-cards">
+    <div *ngFor="let user of users" class="user-card">
       <mat-card>
         <mat-card-header>
           <div mat-card-avatar></div>
@@ -37,5 +37,5 @@
         </mat-card-actions>
       </mat-card>
     </div>
-<!--  </div>-->
-</cdk-virtual-scroll-viewport>
+  </div>
+<!--</cdk-virtual-scroll-viewport>-->

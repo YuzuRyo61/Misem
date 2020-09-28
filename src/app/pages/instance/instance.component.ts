@@ -39,6 +39,10 @@ export class InstanceComponent implements OnInit {
     ]
   );
   openRegister = true;
+  useReCAPTCHA = false;
+  useHCaptcha = false;
+  useMailServer = false;
+  useSMTPSecure = false;
 
   constructor() {
   }

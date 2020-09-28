@@ -70,8 +70,10 @@
         <mat-checkbox>グローバルタイムラインを有効にする</mat-checkbox>
       </section>
       <mat-card>
-        <mat-icon aria-hidden="false">info</mat-icon>
-        管理者やモデレーターの場合は、タイムライン無効設定に関係なく表示することができます。
+        <mat-card-content>
+          <mat-icon aria-hidden="false">info</mat-icon>
+          管理者やモデレーターの場合は、タイムライン無効設定に関係なく表示することができます。
+        </mat-card-content>
       </mat-card>
       <section class="checkbox-section" style="margin-top: 10px;">
         <mat-checkbox>リアクション絵文字が不明な場合（Mastodonからのお気に入りなど）は、★のリアクションにする</mat-checkbox>
@@ -88,6 +90,80 @@
       <button [disabled]="openRegister" color="primary" mat-raised-button style="width: 100%">
         招待コードを作成する
       </button>
+      <h3>reCAPTCHA</h3>
+        <mat-card *ngIf="useHCaptcha" style="margin-bottom: 16px;">
+          <mat-card-content>
+            <mat-icon aria-hidden="false">warning</mat-icon>
+            hCaptchaが有効になっています。複数使用すると正常にアカウント登録が行えない場合があります。
+          </mat-card-content>
+        </mat-card>
+        <section class="checkbox-section">
+          <mat-checkbox [(ngModel)]="useReCAPTCHA">reCAPTCHAを使用する</mat-checkbox>
+        </section>
+        <mat-form-field appearance="outline">
+          <mat-label>サイトキー</mat-label>
+          <input [disabled]="!useReCAPTCHA" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>シークレットキー</mat-label>
+          <input [disabled]="!useReCAPTCHA" matInput>
+        </mat-form-field>
+      <h3>hCaptcha</h3>
+        <section class="checkbox-section">
+          <mat-checkbox [(ngModel)]="useHCaptcha">hCaptchaを使用する</mat-checkbox>
+        </section>
+        <mat-card *ngIf="useReCAPTCHA" style="margin-bottom: 16px;">
+          <mat-card-content>
+            <mat-icon aria-hidden="false">warning</mat-icon>
+            reCAPTCHAが有効になっています。複数使用すると正常にアカウント登録が行えない場合があります。
+          </mat-card-content>
+        </mat-card>
+        <mat-form-field appearance="outline">
+          <mat-label>サイトキー</mat-label>
+          <input [disabled]="!useHCaptcha" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>シークレットキー</mat-label>
+          <input [disabled]="!useHCaptcha" matInput>
+        </mat-form-field>
+    </section>
+
+    <mat-divider></mat-divider>
+
+    <section id="mailServer">
+      <h2>メールサーバー</h2>
+      <section class="checkbox-section">
+        <mat-checkbox [(ngModel)]="useMailServer">メールサーバーを利用する</mat-checkbox>
+      </section>
+      <mat-form-field appearance="outline">
+        <mat-label>Fromメールアドレス</mat-label>
+        <input [disabled]="!useMailServer" matInput type="email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>SMTPサーバーアドレス</mat-label>
+        <input [disabled]="!useMailServer" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>SMTPサーバーポート</mat-label>
+        <input [disabled]="!useMailServer" matInput type="number">
+      </mat-form-field>
+      <mat-card style="margin-bottom: 16px;">
+        <mat-card-content>
+          <mat-icon aria-hidden="false">info</mat-icon>
+          SMTP認証を使用しない場合は、SMTP認証ユーザー名とSMTP認証パスワードを空欄にします。
+        </mat-card-content>
+      </mat-card>
+      <mat-form-field appearance="outline">
+        <mat-label>SMTP認証ユーザー名</mat-label>
+        <input [disabled]="!useMailServer" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>SMTP認証パスワード</mat-label>
+        <input [disabled]="!useMailServer" matInput>
+      </mat-form-field>
+      <section class="checkbox-section">
+        <mat-checkbox [(ngModel)]="useSMTPSecure" [disabled]="!useMailServer">SMTPサーバー接続時に暗黙的なSSL/TLSを使用する</mat-checkbox>
+      </section>
     </section>
   </div>
 </div>
