@@ -1,1 +1,115 @@
-<p>queue works!</p>
+<h1>キュー</h1>
+<div fxLayout="row wrap" fxLayoutAlign="space-evenly" fxLayoutGap="8px grid">
+  <div fxFlex="50" fxFlex.lt-md="100">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Inbound</mat-card-title>
+        <mat-card-subtitle>他のサーバーからこのサーバーへの通信</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>状態</h3>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>queue</mat-icon>
+            <div mat-line>プロセス</div>
+            <div mat-line>1</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>memory</mat-icon>
+            <div mat-line>アクティブ</div>
+            <div mat-line>0</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>hourglass_top</mat-icon>
+            <div mat-line>処理待ち</div>
+            <div mat-line>0</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>sms_failed</mat-icon>
+            <div mat-line>遅延中</div>
+            <div mat-line>0</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <h3>遅延中のドメイン一覧</h3>
+        <div *ngIf="delayInboundInstance.length > 0; else noDelayDomains">
+          <table mat-table [dataSource]="delayInboundInstance">
+            <ng-container matColumnDef="domain">
+              <th mat-header-cell *matHeaderCellDef>ドメイン</th>
+              <td mat-cell *matCellDef="let elem">{{elem.domain}}</td>
+            </ng-container>
+            <ng-container matColumnDef="delayCount">
+              <th mat-header-cell *matHeaderCellDef>遅延してるキュー数</th>
+              <td mat-cell *matCellDef="let elem">{{elem.delayCount}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex="50" fxFlex.lt-md="100">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Outbound</mat-card-title>
+        <mat-card-subtitle>このサーバーから他のサーバーへの通信</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>状態</h3>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>queue</mat-icon>
+            <div mat-line>プロセス</div>
+            <div mat-line>1</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>memory</mat-icon>
+            <div mat-line>アクティブ</div>
+            <div mat-line>0</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>hourglass_top</mat-icon>
+            <div mat-line>処理待ち</div>
+            <div mat-line>0</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>sms_failed</mat-icon>
+            <div mat-line>遅延中</div>
+            <div mat-line>0</div> <!-- TODO: ここに値 -->
+          </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <h3>遅延中のドメイン一覧</h3>
+        <div *ngIf="delayOutboundInstance.length > 0; else noDelayDomains">
+          <table mat-table [dataSource]="delayOutboundInstance">
+            <ng-container matColumnDef="domain">
+              <th mat-header-cell *matHeaderCellDef>ドメイン</th>
+              <td mat-cell *matCellDef="let elem">{{elem.domain}}</td>
+            </ng-container>
+            <ng-container matColumnDef="delayCount">
+              <th mat-header-cell *matHeaderCellDef>遅延してるキュー数</th>
+              <td mat-cell *matCellDef="let elem">{{elem.delayCount}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<section>
+  <p>処理できないキューが溜まっている場合、「キューを全て削除」のボタンを押すとキューを全て取り消すことができます。</p>
+  <p>ただし、キューを取り消した場合、投稿が送信先に届かなくなりますので慎重に行ってください。</p>
+  <button mat-raised-button color="warn" style="width: 100%">キューを全て削除</button>
+</section>
+
+<ng-template #noDelayDomains>
+  <p>遅延中のドメインはありません。</p>
+</ng-template>
