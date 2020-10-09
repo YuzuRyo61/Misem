@@ -1,0 +1,9 @@
+.audit-log-list mat-panel-title,
+.audit-log-list mat-panel-description {
+  flex-basis: 0;
+}
+
+.audit-log-list mat-panel-description {
+  justify-content: space-between;
+  align-items: center;
+}
