@@ -18,24 +18,24 @@
 <mat-divider class="divider"></mat-divider>
 
 <!--<cdk-virtual-scroll-viewport class="users-list" itemSize="200">-->
-  <div fxLayout="row wrap" fxLayoutAlign="space-evenly" fxLayoutGap="16px grid" class="user-cards">
-    <div *ngFor="let user of users" class="user-card">
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar></div>
-          <mat-card-title>{{user.displayName}}</mat-card-title>
-          <mat-card-subtitle>@{{user.username}}@{{user.host}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>ユーザー情報など</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button color="primary">詳細</button>
-          <button mat-button>プロフィール</button>
-          <button mat-button color="warn">サイレンス</button>
-          <button mat-button color="warn">凍結</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+<div class="user-cards" fxLayout="row wrap" fxLayoutAlign="space-evenly" fxLayoutGap="16px grid">
+  <div *ngFor="let user of users" class="user-card">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>{{user.displayName}}</mat-card-title>
+        <mat-card-subtitle>@{{user.username}}@{{user.host}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>ユーザー情報など</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button color="primary" mat-button>詳細</button>
+        <button mat-button>プロフィール</button>
+        <button color="warn" mat-button>サイレンス</button>
+        <button color="warn" mat-button>凍結</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
+</div>
 <!--</cdk-virtual-scroll-viewport>-->

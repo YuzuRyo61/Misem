@@ -91,41 +91,41 @@
         招待コードを作成する
       </button>
       <h3>reCAPTCHA</h3>
-        <mat-card *ngIf="useHCaptcha" style="margin-bottom: 16px;">
-          <mat-card-content>
-            <mat-icon aria-hidden="false">warning</mat-icon>
-            hCaptchaが有効になっています。複数使用すると正常にアカウント登録が行えない場合があります。
-          </mat-card-content>
-        </mat-card>
-        <section class="checkbox-section">
-          <mat-checkbox [(ngModel)]="useReCAPTCHA">reCAPTCHAを使用する</mat-checkbox>
-        </section>
-        <mat-form-field appearance="outline">
-          <mat-label>サイトキー</mat-label>
-          <input [disabled]="!useReCAPTCHA" matInput>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>シークレットキー</mat-label>
-          <input [disabled]="!useReCAPTCHA" matInput>
-        </mat-form-field>
+      <mat-card *ngIf="useHCaptcha" style="margin-bottom: 16px;">
+        <mat-card-content>
+          <mat-icon aria-hidden="false">warning</mat-icon>
+          hCaptchaが有効になっています。複数使用すると正常にアカウント登録が行えない場合があります。
+        </mat-card-content>
+      </mat-card>
+      <section class="checkbox-section">
+        <mat-checkbox [(ngModel)]="useReCAPTCHA">reCAPTCHAを使用する</mat-checkbox>
+      </section>
+      <mat-form-field appearance="outline">
+        <mat-label>サイトキー</mat-label>
+        <input [disabled]="!useReCAPTCHA" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>シークレットキー</mat-label>
+        <input [disabled]="!useReCAPTCHA" matInput>
+      </mat-form-field>
       <h3>hCaptcha</h3>
-        <section class="checkbox-section">
-          <mat-checkbox [(ngModel)]="useHCaptcha">hCaptchaを使用する</mat-checkbox>
-        </section>
-        <mat-card *ngIf="useReCAPTCHA" style="margin-bottom: 16px;">
-          <mat-card-content>
-            <mat-icon aria-hidden="false">warning</mat-icon>
-            reCAPTCHAが有効になっています。複数使用すると正常にアカウント登録が行えない場合があります。
-          </mat-card-content>
-        </mat-card>
-        <mat-form-field appearance="outline">
-          <mat-label>サイトキー</mat-label>
-          <input [disabled]="!useHCaptcha" matInput>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>シークレットキー</mat-label>
-          <input [disabled]="!useHCaptcha" matInput>
-        </mat-form-field>
+      <section class="checkbox-section">
+        <mat-checkbox [(ngModel)]="useHCaptcha">hCaptchaを使用する</mat-checkbox>
+      </section>
+      <mat-card *ngIf="useReCAPTCHA" style="margin-bottom: 16px;">
+        <mat-card-content>
+          <mat-icon aria-hidden="false">warning</mat-icon>
+          reCAPTCHAが有効になっています。複数使用すると正常にアカウント登録が行えない場合があります。
+        </mat-card-content>
+      </mat-card>
+      <mat-form-field appearance="outline">
+        <mat-label>サイトキー</mat-label>
+        <input [disabled]="!useHCaptcha" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>シークレットキー</mat-label>
+        <input [disabled]="!useHCaptcha" matInput>
+      </mat-form-field>
     </section>
 
     <mat-divider></mat-divider>
@@ -162,7 +162,8 @@
         <input [disabled]="!useMailServer" matInput>
       </mat-form-field>
       <section class="checkbox-section">
-        <mat-checkbox [(ngModel)]="useSMTPSecure" [disabled]="!useMailServer">SMTPサーバー接続時に暗黙的なSSL/TLSを使用する</mat-checkbox>
+        <mat-checkbox [(ngModel)]="useSMTPSecure" [disabled]="!useMailServer">SMTPサーバー接続時に暗黙的なSSL/TLSを使用する
+        </mat-checkbox>
       </section>
     </section>
   </div>

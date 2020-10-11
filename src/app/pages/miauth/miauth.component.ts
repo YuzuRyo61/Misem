@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-miauth',
@@ -8,7 +8,8 @@ import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 })
 export class MiauthComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
   }
@@ -19,9 +20,11 @@ export class MiauthComponent implements OnInit {
     });
 
     dialogLogout.afterClosed().subscribe(result => {
-      if (result !== true) return;
+      if (result !== true) {
+        return;
+      }
       // TODO: この中にログアウトするための処理を書く
-    })
+    });
   }
 }
 
@@ -31,7 +34,7 @@ export class MiauthComponent implements OnInit {
 })
 export class MiauthComponentLogoutDialog {
   constructor(
-    public dialogLogout: MatDialogRef<MiauthComponentLogoutDialog>){
+    public dialogLogout: MatDialogRef<MiauthComponentLogoutDialog>) {
   }
 
   close(): void {
