@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
+import {LogoutComponent} from './dialog/logout/logout.component';
 
 @Component({
   selector: 'app-miauth',
@@ -15,7 +16,7 @@ export class MiauthComponent implements OnInit {
   }
 
   logoutConfirm(): void {
-    const dialogLogout = this.dialog.open(MiauthComponentLogoutDialog, {
+    const dialogLogout = this.dialog.open(LogoutComponent, {
       width: '450px'
     });
 
@@ -25,19 +26,5 @@ export class MiauthComponent implements OnInit {
       }
       // TODO: この中にログアウトするための処理を書く
     });
-  }
-}
-
-@Component({
-  selector: 'app-miauth-logout-dialog',
-  templateUrl: './miauth-logout-dialog.component.html'
-})
-export class MiauthComponentLogoutDialog {
-  constructor(
-    public dialogLogout: MatDialogRef<MiauthComponentLogoutDialog>) {
-  }
-
-  close(): void {
-    this.dialogLogout.close();
   }
 }
