@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,16 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
   users = Array.from({length: 10}).map((_, i) => {
-    return     {
+    return {
       id: `id${i}`,
       username: 'example',
       host: 'example.com',
       displayName: 'Example User',
       accountImage: 'https://...'
-    }
-  })
+    };
+  });
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

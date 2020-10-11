@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MiauthComponent } from './miauth.component';
+import {MiauthComponent} from './miauth.component';
 
 describe('MiauthComponent', () => {
   let component: MiauthComponent;
@@ -8,9 +8,9 @@ describe('MiauthComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MiauthComponent ]
+      declarations: [MiauthComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

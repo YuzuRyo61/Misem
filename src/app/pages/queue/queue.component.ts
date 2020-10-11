@@ -1,11 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort} from "@angular/material/sort";
-import {MatTableDataSource} from "@angular/material/table";
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 // TODO: 仮置きインターフェース。移動予定
-export interface delayInstance {
+interface DelayInstance {
   domain: string;
-  delayCount: number
+  delayCount: number;
 }
 
 
@@ -16,9 +16,8 @@ export interface delayInstance {
 })
 export class QueueComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['domain', 'delayCount'];
-  delayInboundInstance: MatTableDataSource<delayInstance> = new MatTableDataSource([
-  ]);
-  delayOutboundInstance: MatTableDataSource<delayInstance> = new MatTableDataSource([
+  delayInboundInstance: MatTableDataSource<DelayInstance> = new MatTableDataSource([]);
+  delayOutboundInstance: MatTableDataSource<DelayInstance> = new MatTableDataSource([
     {
       domain: 'example.com',
       delayCount: 1
@@ -42,7 +41,7 @@ export class QueueComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.delayInboundInstance.sort = this.sortDelayInbound;
     this.delayOutboundInstance.sort = this.sortDelayOutbound;
   }
